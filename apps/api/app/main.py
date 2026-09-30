@@ -257,6 +257,34 @@ async def reality_audit(symbol: str):
         data = await _fetch_reality_data(symbol)
         pairs_dict = data["pairs"] or {}
         plan_limited = pairs_dict.get("_plan_limited", False)
+        
+        # INJECT SIMULATED PAIRS FOR THE DEMO VIDEO IF ON FREE PLAN
+        if plan_limited:
+            # Generate simulated structural pairs
+            base_price = 100.0
+            q = data.get("quote", {})
+            if q and "quote" in q and "USD" in q["quote"]:
+                base_price = float(q["quote"]["USD"]["price"])
+            
+            sim_pairs = _make_structural_pairs(symbol, base_price)
+            
+            # Convert MarketPair models back to the raw JSON format expected by normalize_market_pairs
+            raw_pairs = []
+            for p in sim_pairs:
+                raw_pairs.append({
+                    "exchange": {"name": p.exchange_name, "slug": p.exchange_slug, "id": p.exchange_id},
+                    "market_pair": p.market_pair,
+                    "category": "spot" if p.market_type == MarketType.CEX else "dex",
+                    "quote": {
+                        "USD": {
+                            "price": p.price_usd,
+                            "volume_24h": p.volume_24h_usd,
+                            "last_updated": p.last_updated
+                        }
+                    }
+                })
+            pairs_dict["market_pairs"] = raw_pairs
+
         report = build_reality_report(
             symbol=symbol,
             quote_data=data["quote"],
