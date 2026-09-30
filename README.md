@@ -27,6 +27,25 @@ CMC API ↓ Market Data ↓ Structural Analysis ↓ Evidence ↓ Investigation
 - **Explicit uncertainty**: The system distinguishes between live, cached, unavailable, and insufficient evidence where supported.
 - **Separation of concerns**: CMC provides data. MarketReality analyzes the data. The frontend presents the result.
 
+## Interface & Modules
+
+MarketReality OS is composed of several independent analytical modules designed for institutional research.
+
+### 1. The Reality Audit
+The core module breaks down the structure of a market across multiple dimensions (Volume Concentration, Venue Dependence, Cross-Market Consistency).
+<img src="docs/assets/dimensions.png" alt="Reality Audit Dimensions" width="100%">
+<br><br>
+
+### 2. Evidence Investigator
+Analyzes the structured data output and determines the statistical reliability of the asset's observed price.
+<img src="docs/assets/investigator.png" alt="Evidence Investigator" width="100%">
+<br><br>
+
+### 3. Contextual Search
+A context-aware search and command palette to initialize the deterministic audit engine.
+<img src="docs/assets/empty_state.png" alt="Search Interface" width="100%">
+<br><br>
+
 ## What MarketReality OS Is Not
 
 - not financial advice
