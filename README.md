@@ -1,6 +1,15 @@
 # MarketReality OS
 
-Market integrity and tradability intelligence engine built on CoinMarketCap market data.
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?logo=fastapi)](https://fastapi.tiangolo.com/)
+[![CoinMarketCap](https://img.shields.io/badge/CoinMarketCap-API-blue?logo=coinmarketcap)](https://coinmarketcap.com/api/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+<br>
+<img src="docs/assets/hero.png" alt="MarketReality OS Dashboard" width="100%">
+<br><br>
+
+> **Market integrity and tradability intelligence engine built on CoinMarketCap market data.**
 
 MarketReality OS separates market observations from derived findings and preserves the evidence chain between them. CMC provides the market evidence; MarketReality OS turns that evidence into an auditable structural investigation.
 
