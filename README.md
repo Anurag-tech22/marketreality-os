@@ -4,9 +4,9 @@ Market integrity and tradability intelligence engine built on CoinMarketCap mark
 
 MarketReality OS separates market observations from derived findings and preserves the evidence chain between them. CMC provides the market evidence; MarketReality OS turns that evidence into an auditable structural investigation.
 
-## Build with CMC: API Hackathon
+## Build with CMC: CoinMarketCap API Hackathon
 
-MarketReality OS was built for the Build with CMC: API Hackathon to explore how CoinMarketCap market data can be transformed into an auditable market-structure investigation system.
+MarketReality OS was built for the Build with CMC: CoinMarketCap API Hackathon to explore how CoinMarketCap market data can be transformed into an auditable market-structure investigation system.
 
 CMC API ↓ Market Data ↓ Structural Analysis ↓ Evidence ↓ Investigation
 
@@ -49,7 +49,7 @@ CMC API ↓ Market Data ↓ Structural Analysis ↓ Evidence ↓ Investigation
 | Testing | None implemented |
 | Deployment | Node.js (Frontend), Uvicorn/FastAPI (Backend) |
 
-## Repository Structure Diagram
+## System Architecture
 
 ```mermaid
 graph TD
